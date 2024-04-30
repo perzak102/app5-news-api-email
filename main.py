@@ -1,4 +1,5 @@
 import requests
+from send_email import send_email
 
 api_key = "81acb547848a4d17b543dfa4144a7daa"
 url = f"https://newsapi.org/v2/everything?q=poland&" \
@@ -7,6 +8,14 @@ url = f"https://newsapi.org/v2/everything?q=poland&" \
 
 request = requests.get(url)
 content = request.json( )
+raw_message = ""
 for item in content["articles"]:
-      print(item["title"])
-      print(item["description"])
+      raw_message += "Title: " + item["title"] + "\n" + "Description: " + item["description"] + "\n\n\n"
+
+message: str = f"""\
+Subject: New email from python news app
+
+{raw_message}
+"""
+
+send_email(message.encode("utf-8"))
