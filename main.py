@@ -5,7 +5,7 @@ api_key = "81acb547848a4d17b543dfa4144a7daa"
 topic = "cars"
 url = f"https://newsapi.org/v2/everything?" \
       f"q={topic}" \
-      f"&from=2024-03-30" \
+      f"&from=2024-04-30" \
       f"&sortBy=publishedAt&apiKey=" \
       f"{api_key}" \
       f"&language=en"
@@ -16,7 +16,7 @@ raw_message = ""
 for item in content["articles"][:20]:
     if item["title"] is not None and item["description"] is not None:
         raw_message += "Title: " + item["title"] + "\n" + "Description: " + item["description"] + \
-                       "\n" +  item["url"] + "\n\n"
+                       "\n" + item["url"] + "\n\n"
 
 message: str = f"""\
 Subject: New email from python news app about {topic}
