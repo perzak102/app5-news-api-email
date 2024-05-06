@@ -4,8 +4,7 @@ import streamlit as st
 api_key = "b7BHZ97Tvckd5zuMJee6kyZPalrUepxBW1ytSje3"
 
 url = f"https://api.nasa.gov/planetary/apod?" \
-      f"api_key={api_key}&" \
-      f"date=2024-05-06" \
+      f"api_key={api_key}"
 
 request = requests.get(url)
 content = request.json()

@@ -5,7 +5,7 @@ api_key = "81acb547848a4d17b543dfa4144a7daa"
 topic = "cars"
 url = f"https://newsapi.org/v2/everything?" \
       f"q={topic}" \
-      f"&from=2024-04-30" \
+      f"&from=2024-04-29" \
       f"&sortBy=publishedAt&apiKey=" \
       f"{api_key}" \
       f"&language=en"
